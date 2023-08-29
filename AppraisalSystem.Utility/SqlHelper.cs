@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace AppraisalSystem.Utility {
+namespace Appraisal_System.Utility {
     public static class SqlHelper {
         public static string? ConStr { get; set; }
         public static DataTable ExecuteQuery(string sqlCmd) {

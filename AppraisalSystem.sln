@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34018.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appraisal_System", "Appraisal_System\Appraisal_System.csproj", "{A4A833C7-337E-4B52-9F23-24DCC63A4FEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Appraisal_System", "Appraisal_System\Appraisal_System.csproj", "{A4A833C7-337E-4B52-9F23-24DCC63A4FEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppraisalSystem.Model", "AppraisalSystem.Model\AppraisalSystem.Model.csproj", "{7F17DFBD-956A-474E-9F22-55B26F430F37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Appraisal_System.Model", "AppraisalSystem.Model\Appraisal_System.Model.csproj", "{7F17DFBD-956A-474E-9F22-55B26F430F37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppraisalSystem.Utility", "AppraisalSystem.Utility\AppraisalSystem.Utility.csproj", "{D4B6B7BF-7E73-4CE0-B691-1645FB362930}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Appraisal_System.Utility", "AppraisalSystem.Utility\Appraisal_System.Utility.csproj", "{D4B6B7BF-7E73-4CE0-B691-1645FB362930}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C003AC45-3BE7-45DB-9432-769AB1ECEEF9}"
 	ProjectSection(SolutionItems) = preProject

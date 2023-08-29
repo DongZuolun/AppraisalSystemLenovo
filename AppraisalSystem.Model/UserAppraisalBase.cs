@@ -1,4 +1,4 @@
-﻿using AppraisalSystem.Utility;
+﻿using Appraisal_System.Utility;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppraisalSystem.Model {
+namespace Appraisal_System.Model {
     public class UserAppraisalBase {
         public int Id { get; set; }
         public string? Name { get; set; }

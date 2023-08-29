@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AppraisalSystem.Model\AppraisalSystem.Model.csproj" />
-    <ProjectReference Include="..\AppraisalSystem.Utility\AppraisalSystem.Utility.csproj" />
+    <ProjectReference Include="..\AppraisalSystem.Model\Appraisal_System.Model.csproj" />
+    <ProjectReference Include="..\AppraisalSystem.Utility\Appraisal_System.Utility.csproj" />
   </ItemGroup>
 
 </Project>

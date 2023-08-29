@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace AppraisalSystem.Utility {
+namespace Appraisal_System.Utility {
     public static class ToModel {
         public static T DataRowToModel<T>(this DataRow dr) {
             Type type = typeof(T);

@@ -1,4 +1,4 @@
-using AppraisalSystem.Utility;
+using Appraisal_System.Utility;
 using System.Configuration;
 
 namespace Appraisal_System {

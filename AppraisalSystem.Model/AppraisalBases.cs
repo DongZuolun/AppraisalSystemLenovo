@@ -1,8 +1,8 @@
-﻿using AppraisalSystem.Utility;
+﻿using Appraisal_System.Utility;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace AppraisalSystem.Model {
+namespace Appraisal_System.Model {
     public class AppraisalBases {
         public int Id { get; set; }
         public string? BaseType { get; set; }
