@@ -1,10 +1,6 @@
 ﻿using AppraisalSystem.Utility;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace AppraisalSystem.Model {
     public class AppraisalBases {
@@ -20,6 +16,23 @@ namespace AppraisalSystem.Model {
                 appraisalBases.Add(dr.DataRowToModel<AppraisalBases>());
             }
             return appraisalBases;
+        }
+        public static int Insert(AppraisalBases appraisalBases) {
+            return SqlHelper.ExecuteNonQuery("INSERT INTO AppraisalBases (IsDel,BaseType,AppraisalBase) VALUES (@IsDel,@BaseType,@AppraisalBase)",
+                new SqlParameter("@IsDel", appraisalBases.IsDel),
+                new SqlParameter("@BaseType", appraisalBases.BaseType),
+                new SqlParameter("@AppraisalBase", appraisalBases.AppraisalBase));
+        }
+        public static int Edit(AppraisalBases appraisalBases) {
+            return SqlHelper.ExecuteNonQuery("UPDATE AppraisalBases SET Name=@Name, IsDel=@IsDel,BaseType=@BaseType,AppraisalBase=@AppraisalBase WHERE Id=@Id ",
+                new SqlParameter("@IsDel", appraisalBases.IsDel),
+                new SqlParameter("@BaseType", appraisalBases.BaseType),
+                new SqlParameter("@AppraisalBase", appraisalBases.AppraisalBase));
+        }
+        public static int Delete(int Id, string baseType) {
+            return SqlHelper.ExecuteNonQuery("DELETE FROM AppraisalBases WHERE  Id=@Id AND BaseType=@baseType;",
+                new SqlParameter("@Id", Id),
+                new SqlParameter("@BaseType", baseType));
         }
     }
 }

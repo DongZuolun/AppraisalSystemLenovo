@@ -41,19 +41,18 @@ namespace Appraisal_System {
                 };
                 Users.Insert(user);
                 MessageBox.Show("用户添加成功！");
-                _bindDGV();
             }
             else {
                 _user.Name = txtUserName.Text;
                 _user.Password = "111";
                 _user.Sex = txtSex.Text;
-                _user.BaseTypeId = cbxBaseType.SelectedIndex;
+                _user.BaseTypeId = (int)cbxBaseType.SelectedValue;
                 _user.IsDel = chkIsStop.Checked;
                 Users.Edit(_user);
                 MessageBox.Show("用户修改成功！");
-                _bindDGV();
+                this.Close();
             }
-
+            _bindDGV();
         }
     }
 }
