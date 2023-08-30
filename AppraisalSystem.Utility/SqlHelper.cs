@@ -4,12 +4,13 @@ using System.Data.SqlClient;
 namespace Appraisal_System.Utility {
     public static class SqlHelper {
         public static string? ConStr { get; set; }
-        public static DataTable ExecuteQuery(string sqlCmd) {
+        public static DataTable ExecuteQuery(string sqlCmd,params SqlParameter[] sqlParameters) {
             using SqlConnection connection = new SqlConnection(ConStr);
             connection.Open();
             SqlCommand cmd = new SqlCommand(sqlCmd, connection);
+            cmd.Parameters.AddRange(sqlParameters);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
+                        DataSet ds = new DataSet();
             adapter.Fill(ds);
             return ds.Tables[0];
         }
