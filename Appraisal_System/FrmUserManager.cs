@@ -30,10 +30,10 @@ namespace Appraisal_System {
             bool isStop = chkIsStop.Checked;
             dgvUserAppraisalBase.AutoGenerateColumns = false;
             if (baseTypeId == 0) {
-                dgvUserAppraisalBase.DataSource = UserAppraisalBase.GetAll().FindAll(x => x.Name.Contains(userName) && x.IsDel == isStop);
+                dgvUserAppraisalBase.DataSource = UserAppraisalBase.GetList().FindAll(x => x.Name.Contains(userName) && x.IsDel == isStop);
             }
             else {
-                dgvUserAppraisalBase.DataSource = UserAppraisalBase.GetAll().FindAll(x => x.Name.Contains(userName) && x.BaseTypeId == baseTypeId && x.IsDel == isStop);
+                dgvUserAppraisalBase.DataSource = UserAppraisalBase.GetList().FindAll(x => x.Name.Contains(userName) && x.BaseTypeId == baseTypeId && x.IsDel == isStop);
             }
         }
 

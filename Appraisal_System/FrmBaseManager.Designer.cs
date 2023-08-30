@@ -23,28 +23,63 @@
                 /// the contents of this method with the code editor.
                 /// </summary>
                 private void InitializeComponent() {
-                        dataGridView1 = new DataGridView();
+                        dgvBaseManager = new DataGridView();
+                        gbBase = new GroupBox();
+                        btnBaseUpdate = new Button();
+                        btnSearch = new Button();
                         Id = new DataGridViewTextBoxColumn();
                         BaseType = new DataGridViewTextBoxColumn();
                         AppraisalBase = new DataGridViewTextBoxColumn();
-                        IsDel = new DataGridViewTextBoxColumn();
-                        groupBox1 = new GroupBox();
-                        btnSearch = new Button();
-                        btnBaseUpdate = new Button();
-                        ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-                        groupBox1.SuspendLayout();
+                        IsDel = new DataGridViewCheckBoxColumn();
+                        ((System.ComponentModel.ISupportInitialize)dgvBaseManager).BeginInit();
+                        gbBase.SuspendLayout();
                         SuspendLayout();
                         // 
-                        // dataGridView1
+                        // dgvBaseManager
                         // 
-                        dataGridView1.AllowUserToAddRows = false;
-                        dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-                        dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id, BaseType, AppraisalBase, IsDel });
-                        dataGridView1.Location = new Point(12, 82);
-                        dataGridView1.Name = "dataGridView1";
-                        dataGridView1.RowTemplate.Height = 25;
-                        dataGridView1.Size = new Size(763, 365);
-                        dataGridView1.TabIndex = 0;
+                        dgvBaseManager.AllowUserToAddRows = false;
+                        dgvBaseManager.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+                        dgvBaseManager.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                        dgvBaseManager.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+                        dgvBaseManager.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+                        dgvBaseManager.Columns.AddRange(new DataGridViewColumn[] { Id, BaseType, AppraisalBase, IsDel });
+                        dgvBaseManager.Location = new Point(12, 82);
+                        dgvBaseManager.Name = "dgvBaseManager";
+                        dgvBaseManager.RowTemplate.Height = 25;
+                        dgvBaseManager.Size = new Size(763, 365);
+                        dgvBaseManager.TabIndex = 0;
+                        // 
+                        // gbBase
+                        // 
+                        gbBase.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+                        gbBase.Controls.Add(btnBaseUpdate);
+                        gbBase.Controls.Add(btnSearch);
+                        gbBase.Location = new Point(12, 12);
+                        gbBase.Name = "gbBase";
+                        gbBase.Size = new Size(763, 64);
+                        gbBase.TabIndex = 2;
+                        gbBase.TabStop = false;
+                        gbBase.Text = "身份管理";
+                        // 
+                        // btnBaseUpdate
+                        // 
+                        btnBaseUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                        btnBaseUpdate.Location = new Point(648, 22);
+                        btnBaseUpdate.Name = "btnBaseUpdate";
+                        btnBaseUpdate.Size = new Size(75, 23);
+                        btnBaseUpdate.TabIndex = 8;
+                        btnBaseUpdate.Text = "刷新";
+                        btnBaseUpdate.UseVisualStyleBackColor = true;
+                        // 
+                        // btnSearch
+                        // 
+                        btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                        btnSearch.Location = new Point(1206, 31);
+                        btnSearch.Name = "btnSearch";
+                        btnSearch.Size = new Size(75, 23);
+                        btnSearch.TabIndex = 7;
+                        btnSearch.Text = "查询";
+                        btnSearch.UseVisualStyleBackColor = true;
                         // 
                         // Id
                         // 
@@ -69,63 +104,35 @@
                         IsDel.DataPropertyName = "IsDel";
                         IsDel.HeaderText = "删除";
                         IsDel.Name = "IsDel";
-                        // 
-                        // groupBox1
-                        // 
-                        groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-                        groupBox1.Controls.Add(btnBaseUpdate);
-                        groupBox1.Controls.Add(btnSearch);
-                        groupBox1.Location = new Point(12, 12);
-                        groupBox1.Name = "groupBox1";
-                        groupBox1.Size = new Size(763, 64);
-                        groupBox1.TabIndex = 2;
-                        groupBox1.TabStop = false;
-                        groupBox1.Text = "身份管理";
-                        // 
-                        // btnSearch
-                        // 
-                        btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-                        btnSearch.Location = new Point(1206, 31);
-                        btnSearch.Name = "btnSearch";
-                        btnSearch.Size = new Size(75, 23);
-                        btnSearch.TabIndex = 7;
-                        btnSearch.Text = "查询";
-                        btnSearch.UseVisualStyleBackColor = true;
-                        // 
-                        // btnBaseUpdate
-                        // 
-                        btnBaseUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-                        btnBaseUpdate.Location = new Point(648, 22);
-                        btnBaseUpdate.Name = "btnBaseUpdate";
-                        btnBaseUpdate.Size = new Size(75, 23);
-                        btnBaseUpdate.TabIndex = 8;
-                        btnBaseUpdate.Text = "刷新";
-                        btnBaseUpdate.UseVisualStyleBackColor = true;
+                        IsDel.Resizable = DataGridViewTriState.True;
+                        IsDel.SortMode = DataGridViewColumnSortMode.Automatic;
                         // 
                         // FrmBaseManager
                         // 
                         AutoScaleDimensions = new SizeF(7F, 17F);
                         AutoScaleMode = AutoScaleMode.Font;
                         ClientSize = new Size(787, 459);
-                        Controls.Add(groupBox1);
-                        Controls.Add(dataGridView1);
+                        Controls.Add(gbBase);
+                        Controls.Add(dgvBaseManager);
+                        FormBorderStyle = FormBorderStyle.None;
                         Name = "FrmBaseManager";
                         Text = "FrmBaseManager";
                         WindowState = FormWindowState.Maximized;
-                        ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-                        groupBox1.ResumeLayout(false);
+                        Load += FrmBaseManager_Load;
+                        ((System.ComponentModel.ISupportInitialize)dgvBaseManager).EndInit();
+                        gbBase.ResumeLayout(false);
                         ResumeLayout(false);
                 }
 
                 #endregion
 
-                private DataGridView dataGridView1;
+                private DataGridView dgvBaseManager;
+                private GroupBox gbBase;
+                private Button btnSearch;
+                private Button btnBaseUpdate;
                 private DataGridViewTextBoxColumn Id;
                 private DataGridViewTextBoxColumn BaseType;
                 private DataGridViewTextBoxColumn AppraisalBase;
-                private DataGridViewTextBoxColumn IsDel;
-                private GroupBox groupBox1;
-                private Button btnSearch;
-                private Button btnBaseUpdate;
+                private DataGridViewCheckBoxColumn IsDel;
         }
 }

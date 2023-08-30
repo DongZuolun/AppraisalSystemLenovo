@@ -23,42 +23,41 @@
                 /// the contents of this method with the code editor.
                 /// </summary>
                 private void InitializeComponent() {
-                        groupBox1 = new GroupBox();
+                        gbAppraisal = new GroupBox();
                         btnUserAppraisalSearch = new Button();
                         txtUserName = new TextBox();
                         label1 = new Label();
                         btnUpdate = new Button();
                         btnSearch = new Button();
-                        dataGridView1 = new DataGridView();
+                        dgvUserAppraisal = new DataGridView();
                         Id = new DataGridViewTextBoxColumn();
                         UserName = new DataGridViewTextBoxColumn();
                         Sex = new DataGridViewTextBoxColumn();
                         BaseType = new DataGridViewTextBoxColumn();
                         AppraisalBase = new DataGridViewTextBoxColumn();
-                        IsDel = new DataGridViewCheckBoxColumn();
-                        groupBox1.SuspendLayout();
-                        ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+                        gbAppraisal.SuspendLayout();
+                        ((System.ComponentModel.ISupportInitialize)dgvUserAppraisal).BeginInit();
                         SuspendLayout();
                         // 
-                        // groupBox1
+                        // gbAppraisal
                         // 
-                        groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-                        groupBox1.Controls.Add(btnUserAppraisalSearch);
-                        groupBox1.Controls.Add(txtUserName);
-                        groupBox1.Controls.Add(label1);
-                        groupBox1.Controls.Add(btnUpdate);
-                        groupBox1.Controls.Add(btnSearch);
-                        groupBox1.Location = new Point(19, 8);
-                        groupBox1.Name = "groupBox1";
-                        groupBox1.Size = new Size(763, 64);
-                        groupBox1.TabIndex = 4;
-                        groupBox1.TabStop = false;
-                        groupBox1.Text = "用户绩效";
+                        gbAppraisal.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+                        gbAppraisal.Controls.Add(btnUserAppraisalSearch);
+                        gbAppraisal.Controls.Add(txtUserName);
+                        gbAppraisal.Controls.Add(label1);
+                        gbAppraisal.Controls.Add(btnUpdate);
+                        gbAppraisal.Controls.Add(btnSearch);
+                        gbAppraisal.Location = new Point(12, 12);
+                        gbAppraisal.Name = "gbAppraisal";
+                        gbAppraisal.Size = new Size(776, 60);
+                        gbAppraisal.TabIndex = 4;
+                        gbAppraisal.TabStop = false;
+                        gbAppraisal.Text = "用户绩效";
                         // 
                         // btnUserAppraisalSearch
                         // 
                         btnUserAppraisalSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-                        btnUserAppraisalSearch.Location = new Point(646, 20);
+                        btnUserAppraisalSearch.Location = new Point(659, 20);
                         btnUserAppraisalSearch.Name = "btnUserAppraisalSearch";
                         btnUserAppraisalSearch.Size = new Size(75, 23);
                         btnUserAppraisalSearch.TabIndex = 13;
@@ -84,7 +83,7 @@
                         // btnUpdate
                         // 
                         btnUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-                        btnUpdate.Location = new Point(1245, 22);
+                        btnUpdate.Location = new Point(1258, 22);
                         btnUpdate.Name = "btnUpdate";
                         btnUpdate.Size = new Size(75, 23);
                         btnUpdate.TabIndex = 8;
@@ -94,23 +93,26 @@
                         // btnSearch
                         // 
                         btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-                        btnSearch.Location = new Point(1769, 31);
+                        btnSearch.Location = new Point(1782, 31);
                         btnSearch.Name = "btnSearch";
                         btnSearch.Size = new Size(75, 23);
                         btnSearch.TabIndex = 7;
                         btnSearch.Text = "查询";
                         btnSearch.UseVisualStyleBackColor = true;
                         // 
-                        // dataGridView1
+                        // dgvUserAppraisal
                         // 
-                        dataGridView1.AllowUserToAddRows = false;
-                        dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-                        dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id, UserName, Sex, BaseType, AppraisalBase, IsDel });
-                        dataGridView1.Location = new Point(19, 78);
-                        dataGridView1.Name = "dataGridView1";
-                        dataGridView1.RowTemplate.Height = 25;
-                        dataGridView1.Size = new Size(763, 365);
-                        dataGridView1.TabIndex = 3;
+                        dgvUserAppraisal.AllowUserToAddRows = false;
+                        dgvUserAppraisal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+                        dgvUserAppraisal.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                        dgvUserAppraisal.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+                        dgvUserAppraisal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+                        dgvUserAppraisal.Columns.AddRange(new DataGridViewColumn[] { Id, UserName, Sex, BaseType, AppraisalBase });
+                        dgvUserAppraisal.Location = new Point(12, 78);
+                        dgvUserAppraisal.Name = "dgvUserAppraisal";
+                        dgvUserAppraisal.RowTemplate.Height = 25;
+                        dgvUserAppraisal.Size = new Size(776, 360);
+                        dgvUserAppraisal.TabIndex = 3;
                         // 
                         // Id
                         // 
@@ -142,34 +144,30 @@
                         AppraisalBase.HeaderText = "基数";
                         AppraisalBase.Name = "AppraisalBase";
                         // 
-                        // IsDel
-                        // 
-                        IsDel.DataPropertyName = "IsDel";
-                        IsDel.HeaderText = "离职";
-                        IsDel.Name = "IsDel";
-                        // 
                         // FrmUserAppraisal
                         // 
                         AutoScaleDimensions = new SizeF(7F, 17F);
                         AutoScaleMode = AutoScaleMode.Font;
                         ClientSize = new Size(800, 450);
-                        Controls.Add(groupBox1);
-                        Controls.Add(dataGridView1);
+                        Controls.Add(gbAppraisal);
+                        Controls.Add(dgvUserAppraisal);
+                        FormBorderStyle = FormBorderStyle.None;
                         Name = "FrmUserAppraisal";
                         Text = "FrmUserAppraisal";
                         WindowState = FormWindowState.Maximized;
-                        groupBox1.ResumeLayout(false);
-                        groupBox1.PerformLayout();
-                        ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+                        Load += FrmUserAppraisal_Load;
+                        gbAppraisal.ResumeLayout(false);
+                        gbAppraisal.PerformLayout();
+                        ((System.ComponentModel.ISupportInitialize)dgvUserAppraisal).EndInit();
                         ResumeLayout(false);
                 }
 
                 #endregion
 
-                private GroupBox groupBox1;
+                private GroupBox gbAppraisal;
                 private Button btnUpdate;
                 private Button btnSearch;
-                private DataGridView dataGridView1;
+                private DataGridView dgvUserAppraisal;
                 private Button btnUserAppraisalSearch;
                 private TextBox txtUserName;
                 private Label label1;
@@ -178,6 +176,5 @@
                 private DataGridViewTextBoxColumn Sex;
                 private DataGridViewTextBoxColumn BaseType;
                 private DataGridViewTextBoxColumn AppraisalBase;
-                private DataGridViewCheckBoxColumn IsDel;
         }
 }

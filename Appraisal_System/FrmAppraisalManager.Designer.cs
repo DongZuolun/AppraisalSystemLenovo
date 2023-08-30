@@ -27,24 +27,24 @@
                         btnAppraisalUpdate = new Button();
                         btnUpdate = new Button();
                         btnSearch = new Button();
-                        dataGridView1 = new DataGridView();
+                        dgvAppraisalManager = new DataGridView();
                         Id = new DataGridViewTextBoxColumn();
                         AppraisalType = new DataGridViewTextBoxColumn();
                         AppraisalCoefficient = new DataGridViewTextBoxColumn();
-                        IsDel = new DataGridViewTextBoxColumn();
+                        IsDel = new DataGridViewCheckBoxColumn();
                         groupBox1.SuspendLayout();
-                        ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+                        ((System.ComponentModel.ISupportInitialize)dgvAppraisalManager).BeginInit();
                         SuspendLayout();
                         // 
                         // groupBox1
                         // 
-                        groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+                        groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
                         groupBox1.Controls.Add(btnAppraisalUpdate);
                         groupBox1.Controls.Add(btnUpdate);
                         groupBox1.Controls.Add(btnSearch);
-                        groupBox1.Location = new Point(19, 8);
+                        groupBox1.Location = new Point(12, 8);
                         groupBox1.Name = "groupBox1";
-                        groupBox1.Size = new Size(763, 64);
+                        groupBox1.Size = new Size(770, 64);
                         groupBox1.TabIndex = 4;
                         groupBox1.TabStop = false;
                         groupBox1.Text = "绩效管理";
@@ -52,7 +52,7 @@
                         // btnAppraisalUpdate
                         // 
                         btnAppraisalUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-                        btnAppraisalUpdate.Location = new Point(653, 22);
+                        btnAppraisalUpdate.Location = new Point(660, 22);
                         btnAppraisalUpdate.Name = "btnAppraisalUpdate";
                         btnAppraisalUpdate.Size = new Size(75, 23);
                         btnAppraisalUpdate.TabIndex = 9;
@@ -62,7 +62,7 @@
                         // btnUpdate
                         // 
                         btnUpdate.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-                        btnUpdate.Location = new Point(1245, 22);
+                        btnUpdate.Location = new Point(1252, 22);
                         btnUpdate.Name = "btnUpdate";
                         btnUpdate.Size = new Size(75, 23);
                         btnUpdate.TabIndex = 8;
@@ -72,23 +72,26 @@
                         // btnSearch
                         // 
                         btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-                        btnSearch.Location = new Point(1769, 31);
+                        btnSearch.Location = new Point(1776, 31);
                         btnSearch.Name = "btnSearch";
                         btnSearch.Size = new Size(75, 23);
                         btnSearch.TabIndex = 7;
                         btnSearch.Text = "查询";
                         btnSearch.UseVisualStyleBackColor = true;
                         // 
-                        // dataGridView1
+                        // dgvAppraisalManager
                         // 
-                        dataGridView1.AllowUserToAddRows = false;
-                        dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-                        dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id, AppraisalType, AppraisalCoefficient, IsDel });
-                        dataGridView1.Location = new Point(19, 78);
-                        dataGridView1.Name = "dataGridView1";
-                        dataGridView1.RowTemplate.Height = 25;
-                        dataGridView1.Size = new Size(763, 365);
-                        dataGridView1.TabIndex = 3;
+                        dgvAppraisalManager.AllowUserToAddRows = false;
+                        dgvAppraisalManager.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+                        dgvAppraisalManager.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                        dgvAppraisalManager.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+                        dgvAppraisalManager.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+                        dgvAppraisalManager.Columns.AddRange(new DataGridViewColumn[] { Id, AppraisalType, AppraisalCoefficient, IsDel });
+                        dgvAppraisalManager.Location = new Point(12, 78);
+                        dgvAppraisalManager.Name = "dgvAppraisalManager";
+                        dgvAppraisalManager.RowTemplate.Height = 25;
+                        dgvAppraisalManager.Size = new Size(770, 365);
+                        dgvAppraisalManager.TabIndex = 3;
                         // 
                         // Id
                         // 
@@ -113,6 +116,8 @@
                         IsDel.DataPropertyName = "IsDel";
                         IsDel.HeaderText = "删除";
                         IsDel.Name = "IsDel";
+                        IsDel.Resizable = DataGridViewTriState.True;
+                        IsDel.SortMode = DataGridViewColumnSortMode.Automatic;
                         // 
                         // FrmAppraisalManager
                         // 
@@ -120,12 +125,14 @@
                         AutoScaleMode = AutoScaleMode.Font;
                         ClientSize = new Size(800, 450);
                         Controls.Add(groupBox1);
-                        Controls.Add(dataGridView1);
+                        Controls.Add(dgvAppraisalManager);
+                        FormBorderStyle = FormBorderStyle.None;
                         Name = "FrmAppraisalManager";
                         Text = "FrmAppraisalManager";
                         WindowState = FormWindowState.Maximized;
+                        Load += FrmAppraisalManager_Load;
                         groupBox1.ResumeLayout(false);
-                        ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+                        ((System.ComponentModel.ISupportInitialize)dgvAppraisalManager).EndInit();
                         ResumeLayout(false);
                 }
 
@@ -134,11 +141,11 @@
                 private GroupBox groupBox1;
                 private Button btnUpdate;
                 private Button btnSearch;
-                private DataGridView dataGridView1;
+                private DataGridView dgvAppraisalManager;
                 private Button btnAppraisalUpdate;
                 private DataGridViewTextBoxColumn Id;
                 private DataGridViewTextBoxColumn AppraisalType;
                 private DataGridViewTextBoxColumn AppraisalCoefficient;
-                private DataGridViewTextBoxColumn IsDel;
+                private DataGridViewCheckBoxColumn IsDel;
         }
 }

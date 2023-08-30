@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Appraisal_System.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,11 @@ namespace Appraisal_System {
         public partial class FrmAppraisalManager : Form {
                 public FrmAppraisalManager() {
                         InitializeComponent();
+                }
+
+                private void FrmAppraisalManager_Load(object sender, EventArgs e) {
+                        dgvAppraisalManager.AutoGenerateColumns = false;
+                        dgvAppraisalManager.DataSource = AppraisalCoefficients.GetAll();
                 }
         }
 }
