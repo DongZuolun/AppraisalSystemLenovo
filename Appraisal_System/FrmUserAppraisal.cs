@@ -25,9 +25,21 @@ namespace Appraisal_System {
                         List<AppraisalCoefficients> appraisalCoefficients = AppraisalCoefficients.GetAll();
                         foreach (var ac in appraisalCoefficients) {
                                 dt.Columns.Add(new DataColumn {
-                                        ColumnName = ac.AppraisalType + ac.Id
-                                }); ;
+                                        ColumnName = ac.AppraisalType 
+                                });
+                                dt.Columns.Add(new DataColumn {
+                                        ColumnName = ac.AppraisalType+ac.AppraisalCoefficient
+                                });
+                                dt.Columns.Add(new DataColumn {
+                                        ColumnName = ac.AppraisalType + ac.CaculationMethod
+                                });
                         }
+                        dt.Columns.Add(new DataColumn {
+                                ColumnName = "AssessmentYear"
+                        });
+                        dt.Columns.Add(new DataColumn {
+                                ColumnName = "YearBonus"
+                        });
                         dgvUserAppraisal.AutoGenerateColumns = false;
                         dgvUserAppraisal.DataSource= dt;
                 }
@@ -38,23 +50,23 @@ namespace Appraisal_System {
                         foreach (var ac in appraisalCoefficients) {
                                 dgvColumn.Add(new DataGridViewTextBoxColumn {
                                         HeaderText = ac.AppraisalType,
-                                        DataPropertyName = ac.AppraisalType + ac.Id,
-                                        Name = ac.AppraisalType + ac.Id,
+                                        DataPropertyName = ac.AppraisalType,
+                                        Name = ac.AppraisalType,
                                         ReadOnly = true,
                                         Width = 88,
                                 });
                                 dgvColumn.Add(new DataGridViewTextBoxColumn {
-                                        HeaderText = "系数",
-                                        DataPropertyName = ac.AppraisalCoefficient.ToString() + ac.Id,
-                                        Name = ac.AppraisalCoefficient.ToString() + ac.Id,
+                                        HeaderText = ac.AppraisalType + "系数",
+                                        DataPropertyName = ac.AppraisalType + ac.AppraisalCoefficient.ToString() ,
+                                        Name = ac.AppraisalType + ac.AppraisalCoefficient.ToString() ,      
                                         ReadOnly = true,
                                         Width = 88,
                                         Visible = false,
                                 });
                                 dgvColumn.Add(new DataGridViewTextBoxColumn {
-                                        HeaderText = "计算方式" ,
-                                        DataPropertyName = ac.CaculationMethod.ToString() + ac.Id,
-                                        Name = ac.CaculationMethod.ToString() + ac.Id,
+                                        HeaderText = ac.AppraisalType + "计算方式" ,
+                                        DataPropertyName = ac.AppraisalType + ac.CaculationMethod.ToString() ,
+                                        Name = ac.AppraisalType + ac.CaculationMethod.ToString() ,
                                         ReadOnly = true,
                                         Width = 88,
                                         Visible = false,
